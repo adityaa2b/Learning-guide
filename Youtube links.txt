@@ -1,0 +1,26 @@
+#This file contains youtube channels and links to the learning videos
+
+#SQL
+
+
+#Python
+Python in detail: https://youtu.be/t1fQBD4B7xk?si=fqIZWncRuN5J48ic , https://youtu.be/_uQrJ0TkZlc?si=YNj_BhToyqN5N02c
+Loops in Python: https://youtu.be/9ueMumuFv6g?si=xPdRTLUgROoDRlaQ
+Pandas: https://youtu.be/2uvysYbKdjM?si=9VLdtHu2Yn7qClJ-
+Numpy: https://youtu.be/QUT1VHiLmmI?si=BuGNtZa_7Lrs8rfv
+
+#Spark
+What is Apache spark: https://youtu.be/v_uodKAywXA?si=xeIuwmBNkyenrMNf
+What is Apache Airflow: https://youtu.be/5peQThvQmQk?si=p4T2TdwF-MEBx_AF
+What is Apache Kafka: https://youtu.be/Ydts27Qa8H0?si=vPyBk30VTKlTAtfe
+Pyspark: https://www.youtube.com/live/v7_Zqn4l-Kg?si=i2dec-rFcj-C0oLn, https://www.youtube.com/live/ANotA_YZjvI?si=djyIo4daRYLIEdSw
+
+#Tableau
+What is Tableau:  https://youtu.be/7Jl-RwkzqQ4?si=eiFwHaIOhrWHWDB8
+Tableau in detail: https://youtu.be/-Aj8IlC0IEA?si=U-6HuXm-NuNzRB6v
+Layout containers in Tableau: https://youtu.be/96371LvULXM?si=rrlBfveU_sYQ0SW4
+Dashboards in Tableau: https://youtu.be/mAYvayW77Vw?si=kiqUbxlOVvLUT3Mr
+
+#Databricks
+
+#Snowflake
