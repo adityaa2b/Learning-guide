@@ -1,0 +1,3 @@
+What is Apache spark: https://youtu.be/v_uodKAywXA?si=xeIuwmBNkyenrMNf
+What is Apache Airflow: https://youtu.be/5peQThvQmQk?si=p4T2TdwF-MEBx_AF
+What is Apache Kafka: https://youtu.be/Ydts27Qa8H0?si=vPyBk30VTKlTAtfe
