@@ -1,0 +1,166 @@
+1. What are the benefits of using Python language as a tool in the present scenario?
+  Answer: The following are the benefits of using Python language:
+          Object-Oriented Language
+          High-Level Language
+          Dynamically Typed language
+          Extensive support for Machine Learning Libraries
+          Presence of third-party modules
+          Open source and community development
+          Portable and Interactive
+           Cross-Platform
+
+2. Is Python a compiled language or an interpreted language?
+  Answer: Most of us may be surprised to know that python is actually both a compiled and interpreted language., when Python code is executed, it is first compiled into bytecode and then bytecode is interpreted by the Python Virtual Machine (PVM) on the underlying platform (machine + operating system). This hybrid approach allows python to balance ease of development with execution efficiency.
+
+3. What is the difference between a Mutable datatype and an Immutable data type?
+  Answer: Mutable data types can be edited i.e., they can change at runtime. Eg – List, Dictionary, etc.
+    Immutable data types can not be edited i.e., they can not change at runtime. Eg – String, Tuple, etc.
+
+4. How are arguments passed by value or by reference in Python?
+  Answer: In Python, arguments are passed by object reference (also called “pass by assignment”). This means that functions receive references to the same objects:
+            Mutable objects (like lists or dictionaries) can be modified within the function.
+            Immutable objects (like integers or strings) cannot be changed and reassigning them inside the function doesn’t affect the original object.
+
+5. What is the difference between a Set and Dictionary?
+    The set is unordered collection of unique items that is iterable and mutable. A dictionary in Python is an ordered collection of data values, used to store data values like a map.
+
+6. How is a dictionary different from a list?
+  Answer: A list is an ordered collection of items accessed by their index, while a dictionary is an unordered collection of key-value pairs accessed using unique keys. Lists are ideal for sequential data, whereas dictionaries are better for associative data. For example, a list can store [10, 20, 30], whereas a dictionary can store {“a”: 10, “b”: 20, “c”: 30}.
+
+7. What is the difference between / and // in Python?
+  Answer: / represents precise division (result is a floating point number) whereas // represents floor division (result is an integer)
+
+8. What is a lambda function?
+  Answer: A lambda function is an anonymous function. This function can have any number of parameters but, can have just one statement. For Example: a = lambda x, y : x*y
+
+9. Can we Pass a function as an argument in Python?
+  Answer: Yes, Several arguments can be passed to a function, including objects, variables (of the same or distinct data types), and functions. Functions can be passed as parameters to other functions because they are objects. Higher-order functions are functions that can take other functions as arguments.
+
+10. What is a Variable Scope in Python?
+  Answer: The location where we can find a variable and also access it if required is called the scope of a variable.
+          Python Local variable: Local variables are those that are initialized within a function and are unique to that function. It cannot be accessed outside of the function.
+          Python Global variables: Global variables are the ones that are defined and declared outside any function and are not specified to any function.
+          Module-level scope: It refers to the global objects of the current module accessible in the program.
+          Outermost scope: It refers to any built-in names that the program can call. The name referenced is located last among the objects in this scope.
+
+11. What is docstring in Python?
+  Answer: Python documentation strings (or docstrings) provide a convenient way of associating documentation with Python modules, functions, classes, and methods.
+          Declaring Docstrings: The docstrings are declared using ”’triple single quotes”’ or “””triple double quotes””” just below the class, method, or function declaration. All functions should have a docstring.
+          Accessing Docstrings: The docstrings can be accessed using the __doc__ method of the object or using the help function.
+
+12. What is a break, continue, and pass in Python? 
+   Answer: Break statement is used to terminate the loop or statement in which it is present. After that, the control will pass to the statements that are present after the break statement, if available.
+          Continue is also a loop control statement just like the break statement. continue statement is opposite to that of the break statement, instead of terminating the loop, it forces to execute the next iteration of the loop.
+    P      Pass means performing no operation or in other words, it is a placeholder in the compound statement, where there should be a blank left and nothing has to be written there.
+
+13. What are Built-in data types in Python?
+  Answer: The following are the standard or built-in data types in Python:
+          Numeric: The numeric data type in Python represents the data that has a numeric value. A numeric value can be an integer, a floating number, a Boolean, or even a complex number.
+          Sequence Type: The sequence Data Type in Python is the ordered collection of similar or different data types.
+          Mapping Types: In Python, hashable data can be mapped to random objects using a mapping object. There is currently only one common mapping type, the dictionary, and mapping objects are mutable.
+          Set Types: In Python, a Set is an unordered collection of data types that is iterable, mutable, and has no duplicate elements. The order of elements in a set is undefined though it may consist of various elements.
+
+14. How do you floor a number in Python?
+  Answer: The Python math module includes a method that can be used to calculate the floor of a number. floor() method in Python returns the floor of x i.e., the largest integer not greater than x. Also, The method ceil(x) in Python returns a ceiling value of x i.e., the smallest integer greater than or equal to x.
+
+15. What is Dictionary Comprehension? Give an Example
+  Answer: Dictionary Comprehension is a syntax construction to ease the creation of a dictionary based on the existing iterable. For Example: my_dict = {i:i+7 for i in range(1, 10)}
+
+16. Differentiate between List and Tuple?
+  Answer: The differences between List and Tuple:
+    List:
+      Lists are Mutable datatype.
+      Lists consume more memory
+      The list is better for performing operations, such as insertion and deletion.
+      The implication of iterations is Time-consuming
+
+    Tuple:
+      Tuples are Immutable datatype.
+      Tuple consumes less memory as compared to the list
+      A Tuple data type is appropriate for accessing the elements
+      The implication of iterations is comparatively Faster
+
+17. What is the difference between a shallow copy and a deep copy?
+   Answer: Shallow copy is used when a new instance type gets created and it keeps values that are copied whereas deep copy stores values that are already copied. A shallow copy has faster program execution whereas a deep copy makes it slow.
+
+18. How do you debug a Python program?
+  Answer: By using this command we can debug a Python program: python -m pdb python-script.py
+
+19. What are Iterators in Python?
+  Answer: In Python, iterators are used to iterate a group of elements, containers like a list. Iterators are collections of items, and they can be a list, tuples, or a dictionary. Python iterator implements __itr__ and the next() method to iterate the stored elements. We generally use loops to iterate over the collections (list, tuple) in Python.
+
+20. What are Generators in Python?
+   Answer: In Python, the generator is a way that specifies how to implement iterators. It is a normal function except that it yields expression in the function. It does not implement __itr__ and __next__ method and reduces other overheads as well. If a function contains at least a yield statement, it becomes a generator. The yield keyword pauses the current execution by saving its states and then resumes from the same when required.
+
+21. What is Polymorphism in Python?
+  Answer: Polymorphism means the ability to take multiple forms. Polymorphism allows different classes to be treated as if they are instances of the same class through a common interface. This means that a method in a parent class can be overridden by a method with the same name in a child class, but the child class can provide its own specific implementation. This allows the same method to operate differently depending on the object that invokes it. Polymorphism is about overriding, not overloading; it enables methods to operate on objects of different classes, which can have their own attributes and methods, providing flexibility and reusability in the code.
+
+22. Define encapsulation in Python?
+  Answer: Encapsulation means binding the code and the data together. A Python class is an example of encapsulation.
+
+23. How do you do data abstraction in Python?
+  Answer: Data Abstraction is providing only the required details and hides the implementation from the world. It can be achieved in Python by using interfaces and abstract classes.
+
+24. How is memory management done in Python?
+  Answer: Python uses its private heap space to manage the memory. Basically, all the objects and data structures are stored in the private heap space. Even the programmer can not access this private space as the interpreter takes care of this space. Python also has an inbuilt garbage collector, which recycles all the unused memory and frees the memory and makes it available to the heap space.
+
+25. How to delete a file using Python?
+  Answer: We can delete a file using Python by following approaches: os.remove(), os.unlink()
+
+26. What is slicing in Python?
+  Answer: Python Slicing is a string operation for extracting a part of the string, or some part of a list. With this operator, one can specify where to start the slicing, where to end, and specify the step. List slicing returns a new list from the existing list.
+Syntax: Lst[ Initial : End : IndexJump ]
+
+27. What is a namespace in Python?
+  Answer: A namespace is a naming system used to make sure that names are unique to avoid naming conflicts.
+
+28. What is PIP?
+  Answer: PIP is an acronym for Python Installer Package which provides a seamless interface to install various Python modules. It is a command-line tool that can search for packages over the internet and install them without any user interaction.
+
+29. What is a zip function?
+   Answer: Python zip() function returns a zip object, which maps a similar index of multiple containers. It takes an iterable, converts it into an iterator and aggregates the elements based on iterables passed. It returns an iterator of tuples.
+
+30. What is the difference between @classmethod, @staticmethod, and instance methods in Python?
+  Answer: Instance Method operates on an instance of the class and has access to instance attributes and takes self as the first parameter. Example: def method(self): 
+          Class Method directly operates on the class itself and not on instance, it takes cls as the first parameter. and defined with @classmethod. Example: @classmethod def method(cls): 
+          Static Method does not operate on an instance or the class and takes no self or cls as an argument and is defined with @staticmethod. Example: @staticmethod def method():
+
+31. What is __init__() in Python and how does self play a role in it?
+  Answer: __init__() method in Python is equivalent to constructors in OOP terminology. It is a reserved method in Python classes and is called automatically whenever a new object is instantiated. This method is used to initialize the object’s attributes with values. While __init__() initializes the object, it does not allocate memory. Memory allocation for a new object is handled by the __new__() method, which is called before __init__(). The self parameter in __init__() refers to the instance of the class being created as it allows access to the instance’s attributes and methods. self must be explicitly declared as the first parameter in all instance methods, including __init__().
+
+32. Write a code to display the current time?
+   Answer:
+      import time
+
+      currenttime= time.localtime(time.time())
+      print ("Current time is", currenttime)
+
+33. What are Access Specifiers in Python?
+  Answer: Python uses the ‘_’ symbol to determine the access control for a specific data member or a member function of a class. A Class in Python has three types of Python access modifiers:
+        Public Access Modifier: The members of a class that are declared public are easily accessible from any part of the program. All data members and member functions of a class are public by default. 
+
+        Protected Access Modifier: The members of a class that are declared protected are only accessible to a class derived from it. All data members of a class are declared protected by adding a single underscore ‘_’ symbol before the data members of that class. 
+
+        Private Access Modifier: The members of a class that are declared private are accessible within the class only, the private access modifier is the most secure access modifier. Data members of a class are declared private by adding a double underscore ‘__’ symbol before the data member of that class.
+
+34. What is Walrus Operator?
+ Answer: Walrus Operator allows you to assign a value to a variable within an expression. This can be useful when you need to use a value multiple times in a loop, but don’t want to repeat the calculation. Walrus Operator is represented by the `:=` syntax and can be used in a variety of contexts including while loops and if statements.
+Note: Python versions before 3.8 doesn’t support Walrus Operator.
+
+35. How do you check if a string contains only digits in Python?
+  Answer: You can check if a string contains only digits in Python using the isdigit() method.
+
+36. How do you split a string into a list of substrings?
+  Answer: You can split a string into a list of substrings using the split() method in Python.
+
+37. How do you sort a list in Python?
+  Answer: You can sort a list in Python using the sort() method for in-place sorting or the sorted() function for returning a new sorted list in Python.
+
+38. How do you check if an element exists in a Python list?
+  Answer: You can check if an element exists in a list using the in keyword in Python.
+
+39. How do you find the index of an element in a list?
+Answer: You can find the index of an element in a list using the index() method in Python.
+
+40. How do you count the occurrences of an element in a Python list?
+Answer: You can count the occurrences of an element in a Python list using the count() method.
