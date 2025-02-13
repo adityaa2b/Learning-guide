@@ -24,3 +24,5 @@ Dashboards in Tableau: https://youtu.be/mAYvayW77Vw?si=kiqUbxlOVvLUT3Mr
 #Databricks
 
 #Snowflake
+What is snowkflake: https://youtu.be/VIJH7TZXkaA?si=FQjZWZPbFKyR2BQn
+
