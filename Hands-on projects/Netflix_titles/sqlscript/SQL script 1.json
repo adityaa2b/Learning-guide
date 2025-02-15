@@ -1,0 +1,17 @@
+{
+	"name": "SQL script 1",
+	"properties": {
+		"content": {
+			"query": "-- Count of shows for each country for earyear\nSELECT country, release_year, count(show_id) as count_of_shows\nFROM Netflixtiles\nwhere country is not null\ngroup by country,release_year\norder by 2 desc,3 desc;",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "netflixtilesDB",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

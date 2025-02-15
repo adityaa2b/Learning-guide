@@ -1,0 +1,25 @@
+{
+	"name": "netflixtilesDB",
+	"properties": {
+		"Name": "netflixtilesDB",
+		"EntityType": "DATABASE",
+		"Origin": {
+			"Type": "SPARK"
+		},
+		"Properties": {
+			"IsSyMSCDMDatabase": true
+		},
+		"Source": {
+			"Provider": "ADLS",
+			"Location": "abfss://netflix-titles-data@netflixtitlesdata.dfs.core.windows.net/netflixtilesDB",
+			"Properties": {
+				"FormatType": "csv",
+				"LinkedServiceName": "netflix-titles-sa-WorkspaceDefaultStorage"
+			}
+		},
+		"PublishStatus": "PUBLISHED",
+		"ObjectVersion": 1,
+		"ObjectId": "be6116ff-16e7-47be-bd06-62baf9f235a6"
+	},
+	"type": "DATABASE"
+}
