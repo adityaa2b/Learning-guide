@@ -301,15 +301,16 @@
 						"spark.dynamicAllocation.enabled": "false",
 						"spark.dynamicAllocation.minExecutors": "2",
 						"spark.dynamicAllocation.maxExecutors": "2",
-						"spark.autotune.trackingId": "35bf242c-7e14-4932-a561-2c2c7d38992e"
+						"spark.autotune.trackingId": "42552282-0b95-43da-91d2-9c87afabdd8f"
 					}
 				},
 				"metadata": {
 					"saveOutput": true,
-					"synapse_widget": {
-						"version": "0.1"
-					},
 					"enableDebugMode": false,
+					"kernelspec": {
+						"name": "synapse_pyspark",
+						"display_name": "Synapse PySpark"
+					},
 					"language_info": {
 						"name": "python"
 					},
@@ -320,14 +321,12 @@
 						"endpoint": "https://netflix-titles-sa.dev.azuresynapse.net/livyApi/versions/2019-11-01-preview/sparkPools/NetflixTilesSP",
 						"auth": {
 							"type": "AAD",
-							"authResource": "https://dev.azuresynapse.net",
-							"authHeader": null
+							"authResource": "https://dev.azuresynapse.net"
 						},
 						"sparkVersion": "3.4",
 						"nodeCount": 10,
 						"cores": 4,
-						"memory": 28,
-						"extraHeader": null
+						"memory": 28
 					},
 					"sessionKeepAliveTimeout": 30
 				},
@@ -351,7 +350,7 @@
 							""
 						],
 						"outputs": [],
-						"execution_count": 50
+						"execution_count": 66
 					},
 					{
 						"cell_type": "code",
@@ -372,7 +371,7 @@
 							""
 						],
 						"outputs": [],
-						"execution_count": 51
+						"execution_count": 68
 					},
 					{
 						"cell_type": "code",
@@ -392,7 +391,7 @@
 							"Netflixtiles_modified.write.mode(\"overwrite\").saveAsTable(\"netflixtilesdb.netflixtiles_tmp\") #overwrite the existing table data based on above modification"
 						],
 						"outputs": [],
-						"execution_count": 61
+						"execution_count": 69
 					},
 					{
 						"cell_type": "code",
@@ -412,7 +411,7 @@
 							"spark.sql(\"ALTER TABLE netflixtilesdb.netflixtiles_tmp RENAME TO netflixtilesdb.netflixtiles\") # then rename the tmp table to original table"
 						],
 						"outputs": [],
-						"execution_count": 63
+						"execution_count": 70
 					},
 					{
 						"cell_type": "code",
@@ -432,7 +431,7 @@
 							"Netflixtiles_count.show()"
 						],
 						"outputs": [],
-						"execution_count": 64
+						"execution_count": 71
 					},
 					{
 						"cell_type": "code",
@@ -452,7 +451,7 @@
 							"Netflixtiles.repartition(1).write.mode(\"overwrite\").option(\"header\",'true').csv(\"abfss://netflix-titles-data@netflixtitlesdata.dfs.core.windows.net/transformed-data/Netflixtiles\")"
 						],
 						"outputs": [],
-						"execution_count": 65
+						"execution_count": 72
 					}
 				]
 			},
@@ -515,8 +514,7 @@
 											"Properties": {
 												"HIVE_TYPE_STRING": "string"
 											}
-										},
-										"DeltaFormatInvalidMessages": []
+										}
 									},
 									{
 										"Name": "type",
@@ -528,8 +526,7 @@
 											"Properties": {
 												"HIVE_TYPE_STRING": "string"
 											}
-										},
-										"DeltaFormatInvalidMessages": []
+										}
 									},
 									{
 										"Name": "title",
@@ -541,8 +538,7 @@
 											"Properties": {
 												"HIVE_TYPE_STRING": "string"
 											}
-										},
-										"DeltaFormatInvalidMessages": []
+										}
 									},
 									{
 										"Name": "director",
@@ -554,8 +550,7 @@
 											"Properties": {
 												"HIVE_TYPE_STRING": "string"
 											}
-										},
-										"DeltaFormatInvalidMessages": []
+										}
 									},
 									{
 										"Name": "cast",
@@ -567,8 +562,7 @@
 											"Properties": {
 												"HIVE_TYPE_STRING": "string"
 											}
-										},
-										"DeltaFormatInvalidMessages": []
+										}
 									},
 									{
 										"Name": "country",
@@ -580,8 +574,7 @@
 											"Properties": {
 												"HIVE_TYPE_STRING": "string"
 											}
-										},
-										"DeltaFormatInvalidMessages": []
+										}
 									},
 									{
 										"Name": "date_added",
@@ -593,8 +586,7 @@
 											"Properties": {
 												"HIVE_TYPE_STRING": "string"
 											}
-										},
-										"DeltaFormatInvalidMessages": []
+										}
 									},
 									{
 										"Name": "release_year",
@@ -605,8 +597,7 @@
 											"Properties": {
 												"HIVE_TYPE_STRING": "long"
 											}
-										},
-										"DeltaFormatInvalidMessages": []
+										}
 									},
 									{
 										"Name": "rating",
@@ -618,8 +609,7 @@
 											"Properties": {
 												"HIVE_TYPE_STRING": "string"
 											}
-										},
-										"DeltaFormatInvalidMessages": []
+										}
 									},
 									{
 										"Name": "duration",
@@ -631,8 +621,7 @@
 											"Properties": {
 												"HIVE_TYPE_STRING": "string"
 											}
-										},
-										"DeltaFormatInvalidMessages": []
+										}
 									},
 									{
 										"Name": "listed_in",
@@ -644,8 +633,7 @@
 											"Properties": {
 												"HIVE_TYPE_STRING": "string"
 											}
-										},
-										"DeltaFormatInvalidMessages": []
+										}
 									},
 									{
 										"Name": "description",
@@ -657,8 +645,7 @@
 											"Properties": {
 												"HIVE_TYPE_STRING": "string"
 											}
-										},
-										"DeltaFormatInvalidMessages": []
+										}
 									}
 								],
 								"Format": {
@@ -669,8 +656,8 @@
 									"Properties": {
 										"path": "abfss://netflix-titles-data@netflixtitlesdata.dfs.core.windows.net/raw-data/netflix-titles.csv",
 										"delimiter": ",",
-										"multiLine": "false",
 										"firstRowAsHeader": "true",
+										"multiLine": "false",
 										"serialization.format": "1",
 										"FormatTypeSetToDatabaseDefault": false,
 										"header": "true"
