@@ -18,15 +18,16 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "35bf242c-7e14-4932-a561-2c2c7d38992e"
+				"spark.autotune.trackingId": "42552282-0b95-43da-91d2-9c87afabdd8f"
 			}
 		},
 		"metadata": {
 			"saveOutput": true,
-			"synapse_widget": {
-				"version": "0.1"
-			},
 			"enableDebugMode": false,
+			"kernelspec": {
+				"name": "synapse_pyspark",
+				"display_name": "Synapse PySpark"
+			},
 			"language_info": {
 				"name": "python"
 			},
@@ -37,14 +38,13 @@
 				"endpoint": "https://netflix-titles-sa.dev.azuresynapse.net/livyApi/versions/2019-11-01-preview/sparkPools/NetflixTilesSP",
 				"auth": {
 					"type": "AAD",
-					"authResource": "https://dev.azuresynapse.net",
-					"authHeader": null
+					"authResource": "https://dev.azuresynapse.net"
 				},
 				"sparkVersion": "3.4",
 				"nodeCount": 10,
 				"cores": 4,
 				"memory": 28,
-				"extraHeader": null
+				"automaticScaleJobs": false
 			},
 			"sessionKeepAliveTimeout": 30
 		},
@@ -67,7 +67,7 @@
 					"Netflixtiles_count.show() #dispaly the count of records before changes\n",
 					""
 				],
-				"execution_count": 50
+				"execution_count": 66
 			},
 			{
 				"cell_type": "code",
@@ -87,7 +87,7 @@
 					"Netflixtiles_modified_count.show()#dispaly the count of records\r\n",
 					""
 				],
-				"execution_count": 51
+				"execution_count": 68
 			},
 			{
 				"cell_type": "code",
@@ -106,7 +106,7 @@
 					"Netflixtiles_modified = spark.sql(\"select * FROM `netflixtilesDB`.`Netflixtiles` where country is not null\") #query for the required modified data\r\n",
 					"Netflixtiles_modified.write.mode(\"overwrite\").saveAsTable(\"netflixtilesdb.netflixtiles_tmp\") #overwrite the existing table data based on above modification"
 				],
-				"execution_count": 61
+				"execution_count": 69
 			},
 			{
 				"cell_type": "code",
@@ -125,7 +125,7 @@
 					"spark.sql(\"DROP TABLE IF EXISTS netflixtilesdb.netflixtiles\")  #drop the existing table\r\n",
 					"spark.sql(\"ALTER TABLE netflixtilesdb.netflixtiles_tmp RENAME TO netflixtilesdb.netflixtiles\") # then rename the tmp table to original table"
 				],
-				"execution_count": 63
+				"execution_count": 70
 			},
 			{
 				"cell_type": "code",
@@ -144,7 +144,7 @@
 					"Netflixtiles_count = spark.sql(\"select count(*) FROM `netflixtilesDB`.`Netflixtiles`\") #get the count of records after changes\r\n",
 					"Netflixtiles_count.show()"
 				],
-				"execution_count": 64
+				"execution_count": 71
 			},
 			{
 				"cell_type": "code",
@@ -163,7 +163,7 @@
 					"#export data into csv file to the transformed data folder created under container\r\n",
 					"Netflixtiles.repartition(1).write.mode(\"overwrite\").option(\"header\",'true').csv(\"abfss://netflix-titles-data@netflixtitlesdata.dfs.core.windows.net/transformed-data/Netflixtiles\")"
 				],
-				"execution_count": 65
+				"execution_count": 72
 			}
 		]
 	}
