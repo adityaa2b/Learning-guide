@@ -15,7 +15,7 @@
 - [What is Apache spark](https://youtu.be/v_uodKAywXA?si=xeIuwmBNkyenrMNf)
 - [Spark end to end](https://youtu.be/0iNJPKheQqM?si=rP2tGNM_mzfMeGXZ)
 - [What is Apache Airflow](https://youtu.be/5peQThvQmQk?si=p4T2TdwF-MEBx_AF)
-- [What is Apache Kafka)(https://youtu.be/Ydts27Qa8H0?si=vPyBk30VTKlTAtfe)
+- [What is Apache Kafka](https://youtu.be/Ydts27Qa8H0?si=vPyBk30VTKlTAtfe)
 - [Pyspark_1](https://www.youtube.com/live/v7_Zqn4l-Kg?si=i2dec-rFcj-C0oLn) | [Pyspark_2](https://www.youtube.com/live/ANotA_YZjvI?si=djyIo4daRYLIEdSw)
 - [Spark Scala](https://www.youtube.com/live/PzQ3DBrHW-U?si=bAXSib3rMo_z18o5)
 
