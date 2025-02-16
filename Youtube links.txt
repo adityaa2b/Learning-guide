@@ -3,6 +3,7 @@
 #SQL
 Sql in detail: https://youtu.be/7S_tz1z_5bA?si=K2juBjxkF9Yo-GYi
 Advance Sql: https://youtu.be/K1WeoKxLZ5o?si=5fI7xSFhPpcyB0_V
+[Sql in detail](https://youtu.be/7S_tz1z_5bA?si=K2juBjxkF9Yo-GYi)
 
 #Python
 What is Python: https://youtu.be/Y8Tko2YC5hA?si=JtWb22QFx2IUi0iN
