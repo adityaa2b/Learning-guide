@@ -2,17 +2,17 @@ from azure.storage.blob import BlobServiceClient
 import os
 
 # Azure Storage Account details
-AZURE_STORAGE_CONNECTION_STRING = "DefaultEndpointsProtocol=https;AccountName=airbnbdataab;AccountKey=pj0V2sOHbnitwqSzoggpV+NTx/T9+667fFJlzhQKxpm4t5BZp0dQc11LcThIazi8SMZfSbseG+x9+AStkjMKpQ==;EndpointSuffix=core.windows.net"
-CONTAINER_NAME = "kaggle-data/raw-data"
+AZURE_STORAGE_CONNECTION_STRING = "YOUR STORAGE ACCOUNT DETAILS"
+CONTAINER_NAME = "CONTAINER DETAILS"
 
 # Upload files from Kaggle data folder
-local_folder = "D:/Study/Airbnb/Airbnb_Open_Data.csv"
+local_folder = "YOUR DATA FILE LOCATION"
 
 # Create a BlobServiceClient
 blob_service_client = BlobServiceClient.from_connection_string(AZURE_STORAGE_CONNECTION_STRING)
 
 #get blob client
-blob_client = blob_service_client.get_blob_client(container=CONTAINER_NAME, blob="Airbnb_Open_Data.csv")
+blob_client = blob_service_client.get_blob_client(container=CONTAINER_NAME, blob="FILENAME")
 
 # upload file to the container
 with open(local_folder, "rb") as data:
