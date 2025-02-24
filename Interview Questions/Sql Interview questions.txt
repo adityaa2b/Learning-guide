@@ -1,0 +1,319 @@
+1. What are the main types of SQL commands?
+SQL commands are broadly classified into:
+
+DDL (Data Definition Language): CREATE, ALTER, DROP, TRUNCATE.
+DML (Data Manipulation Language): SELECT, INSERT, UPDATE, DELETE.
+DCL (Data Control Language): GRANT, REVOKE.
+TCL (Transaction Control Language): COMMIT, ROLLBACK, SAVEPOINT.
+
+2. What is the difference between CHAR and VARCHAR2 data types?
+CHAR: Fixed-length storage. If the defined length is not fully used, it is padded with spaces.
+VARCHAR2: Variable-length storage. Only the actual data is stored, saving space when the full length is not needed.
+
+3. What is a primary key?
+A primary key is a unique identifier for each record in a table. It ensures that no two rows have the same value in the primary key column(s), and it does not allow NULL values.
+
+4. What is a foreign key?
+A foreign key is a column (or set of columns) in one table that refers to the primary key in another table. It establishes and enforces a relationship between the two tables, ensuring data integrity.
+
+5. What is normalization in databases?
+Normalization is the process of organizing data in a database to reduce redundancy and improve data integrity. This involves dividing large tables into smaller, related tables and defining relationships between them to ensure consistency and avoid anomalies.
+
+6. What is denormalization, and when is it used?
+Denormalization is the process of combining normalized tables into larger tables for performance reasons. It is used when complex queries and joins slow down data retrieval, and the performance benefits outweigh the drawbacks of redundancy.
+
+7. What is the difference between the WHERE and HAVING clauses?
+WHERE: Filters rows before any grouping takes place.
+HAVING: Filters grouped data after the GROUP BY clause has been applied.
+In short, WHERE applies to individual rows, while HAVING applies to groups.
+
+8. What are indexes, and why are they used?
+Indexes are database objects that improve query performance by allowing faster retrieval of rows. They function like a book’s index, making it quicker to find specific data without scanning the entire table. However, indexes require additional storage and can slightly slow down data modification operations.
+
+9. What is the difference between DELETE and TRUNCATE commands?
+DELETE: Removes rows one at a time and records each deletion in the transaction log, allowing rollback. It can have a WHERE clause.
+TRUNCATE: Removes all rows at once without logging individual row deletions. It cannot have a WHERE clause and is faster than DELETE for large data sets.
+
+10. What are the differences between SQL and NoSQL databases?
+SQL Databases:
+  Use structured tables with rows and columns.
+  Rely on a fixed schema.
+  Offer ACID properties.
+NoSQL Databases:
+  Use flexible, schema-less structures (e.g., key-value pairs, document stores).
+  Are designed for horizontal scaling.
+  Often focus on performance and scalability over strict consistency.
+
+11. What are the types of constraints in SQL?
+Common constraints include:
+
+NOT NULL: Ensures a column cannot have NULL values.
+UNIQUE: Ensures all values in a column are distinct.
+PRIMARY KEY: Uniquely identifies each row in a table.
+FOREIGN KEY: Ensures referential integrity by linking to a primary key in another table.
+CHECK: Ensures that all values in a column satisfy a specific condition.
+DEFAULT: Sets a default value for a column when no value is specified.
+
+12. What is a cursor in SQL?
+A cursor is a database object used to retrieve, manipulate, and traverse through rows in a result set one row at a time. Cursors are helpful when performing operations that must be processed sequentially rather than in a set-based manner.
+
+13. What is a trigger in SQL?
+A trigger is a set of SQL statements that automatically execute in response to certain events on a table, such as INSERT, UPDATE, or DELETE. Triggers help maintain data consistency, enforce business rules, and implement complex integrity constraints.
+
+14. What is the difference between UNION and UNION ALL?
+UNION: Removes duplicate rows from the result set, ensuring only unique rows are returned.
+UNION ALL: Includes all rows from each query, including duplicates.
+Performance-wise, UNION ALL is faster because it doesn’t require an additional step to remove duplicates.
+
+15. What are scalar functions in SQL?
+Scalar functions operate on individual values and return a single value as a result. They are often used for formatting or converting data. Common examples include:
+
+LEN(): Returns the length of a string.
+ROUND(): Rounds a numeric value.
+CONVERT(): Converts a value from one data type to another.
+
+16. What is the purpose of the COALESCE function?
+The COALESCE function returns the first non-NULL value from a list of expressions. It’s commonly used to provide default values or handle missing data gracefully.
+
+17. How does the CASE statement work in SQL?
+The CASE statement is SQL’s way of implementing conditional logic in queries. It evaluates conditions and returns a value based on the first condition that evaluates to true. If no condition is met, it can return a default value using the ELSE clause.
+
+18. What are the differences between SQL’s COUNT() and SUM() functions?
+    COUNT(): Counts the number of rows or non-NULL values in a column.
+    SUM(): Adds up all numeric values in a column.
+
+19.  What is the difference between the NVL and NVL2 functions?
+    NVL(): Replaces a NULL value with a specified replacement value.
+    NVL2(): Evaluates two values:
+      If the first argument is NOT NULL, returns the second argument.
+      If the first argument is NULL, returns the third argument.
+
+20. How does the RANK() function differ from DENSE_RANK()?
+      RANK(): Assigns a rank to each row, with gaps if there are ties.
+      DENSE_RANK(): Assigns consecutive ranks without any gaps.
+If two employees have the same salary, they get the same rank, but RANK() will skip a number for the next rank, while DENSE_RANK() will not.
+
+21. What is the difference between ROW_NUMBER() and RANK()?
+    ROW_NUMBER(): Assigns a unique number to each row regardless of ties.
+    RANK(): Assigns the same number to tied rows and leaves gaps for subsequent ranks.
+
+22. What are common table expressions (CTEs) in SQL?
+    A CTE is a temporary result set defined within a query. It improves query readability and can be referenced multiple times.
+
+23. What are window functions, and how are they used?
+    Window functions perform calculations across a set of rows that are related to the current row. Unlike aggregate functions, they don’t collapse the result set.
+
+24. What is the difference between an index and a key in SQL?
+    Index : An index is a database object created to speed up data retrieval. It stores a sorted reference to table data, which helps the database engine find rows more quickly than scanning the entire table.
+Example: A non-unique index on a column like LastName allows quick lookups of rows where the last name matches a specific value.
+
+    Key: A key is a logical concept that enforces rules for uniqueness or relationships in the data. For instance, a PRIMARY KEY uniquely identifies each row in a table and ensures that no duplicate or NULL values exist in the key column(s). A FOREIGN KEY maintains referential integrity by linking rows in one table to rows in another.
+
+25. How does indexing improve query performance?
+    Indexing allows the database to locate and access the rows corresponding to a query condition much faster than scanning the entire table. Instead of reading each row sequentially, the database uses the index to jump directly to the relevant data pages. This reduces the number of disk I/O operations and speeds up query execution, especially for large tables.
+
+26. What are the trade-offs of using indexes in SQL databases?
+    Advantages:
+      Faster query performance, especially for SELECT queries with WHERE clauses, JOIN conditions, or ORDER BY clauses.
+      Improved sorting and filtering efficiency.
+
+    Disadvantages:
+      Increased storage space for the index structures.
+      Additional overhead for write operations (INSERT, UPDATE, DELETE), as indexes must be updated whenever the underlying data changes.
+      Potentially slower bulk data loads or batch inserts due to the need to maintain index integrity.
+In short, indexes make read operations faster but can slow down write operations and increase storage requirements.
+
+27. What is the difference between clustered and non-clustered indexes?
+      Clustered Index:
+        Organizes the physical data in the table itself in the order of the indexed column(s).
+        A table can have only one clustered index.
+        Improves range queries and queries that sort data.
+    Example: If EmployeeID is the clustered index, the rows in the table are stored physically sorted by EmployeeID.
+
+    Non-Clustered Index:
+      Maintains a separate structure that contains a reference (or pointer) to the physical data in the table.
+      A table can have multiple non-clustered indexes.
+      Useful for specific query conditions that aren’t related to the primary ordering of the data.
+    Example: A non-clustered index on LastName allows fast lookups by last name even if the table is sorted by another column.
+
+28. What are temporary tables, and how are they used?
+    Temporary tables are tables that exist only for the duration of a session or a transaction. They are useful for storing intermediate results, simplifying complex queries, or performing operations on subsets of data without modifying the main tables.
+
+    Local Temporary Tables:
+      Prefixed with # (e.g., #TempTable).
+      Only visible to the session that created them.
+      Automatically dropped when the session ends.
+
+    Global Temporary Tables:
+      Prefixed with ## (e.g., ##GlobalTempTable).
+      Visible to all sessions.
+      Dropped when all sessions that reference them are closed.
+
+29. What is a materialized view, and how does it differ from a standard view?
+    Standard View:
+      A virtual table defined by a query.
+      Does not store data; the underlying query is executed each time the view is referenced.
+      A standard view shows real-time data.
+
+    Materialized View:
+      A physical table that stores the result of the query.
+      Data is precomputed and stored, making reads faster.
+      Requires periodic refreshes to keep data up to date.
+      materialized view is used to store aggregated sales data, updated nightly, for fast reporting.
+
+30. How can you handle duplicates in a query without using DISTINCT?
+    GROUP BY: Aggregate rows to eliminate duplicates
+    ROW_NUMBER(): Assign a unique number to each row and filter by that
+
+31. What are partitioned tables, and when should we use them?
+    Partitioned tables divide data into smaller, more manageable segments based on a column’s value (e.g., date or region). Each partition is stored separately, making queries that target a specific partition more efficient. It is used when
+    > Large tables with millions or billions of rows.
+    > Scenarios where queries frequently filter on partitioned columns (e.g., year, region).
+    > To improve maintenance operations, such as archiving older partitions without affecting the rest of the table.
+
+32. What are the ACID properties of a transaction?
+    ACID is an acronym that stands for Atomicity, Consistency, Isolation, and Durability—four key properties that ensure database transactions are processed reliably.
+  Atomicity:
+    A transaction is treated as a single unit of work, meaning all operations must succeed or fail as a whole.
+    If any part of the transaction fails, the entire transaction is rolled back.
+  Consistency:
+      A transaction must take the database from one valid state to another, maintaining all defined rules and constraints.
+      This ensures data integrity is preserved throughout the transaction process.
+  Isolation:
+    Transactions should not interfere with each other.
+    Even if multiple transactions occur simultaneously, each must operate as if it were the only one in the system until it is complete.
+  Durability:
+    Once a transaction is committed, its changes must persist, even in the event of a system failure.
+    This ensures the data remains stable after the transaction is successfully completed.
+
+33. What are the differences between OLTP and OLAP systems?
+    OLTP (Online Transaction Processing):
+      Handles large volumes of simple transactions (e.g., order entry, inventory updates).
+      Optimized for fast, frequent reads and writes.
+      Normalized schema to ensure data integrity and consistency.
+    Examples: e-commerce sites, banking systems.
+
+  OLAP (Online Analytical Processing):
+    Handles complex queries and analysis on large datasets.
+    Optimized for read-heavy workloads and data aggregation.
+    Denormalized schema (e.g., star or snowflake schemas) to support faster querying.
+    Examples: Business intelligence reporting, data warehousing.
+
+34. What is the purpose of the SQL EXCEPT operator?
+    The EXCEPT operator is used to return rows from one query’s result set that are not present in another query’s result set. It effectively performs a set difference, showing only the data that is unique to the first query.
+
+Use Case:
+  To find discrepancies between datasets.
+  To verify that certain data exists in one dataset but not in another.
+
+Performance Considerations:
+  EXCEPT works best when the datasets involved have appropriate indexing and when the result sets are relatively small.
+  Large datasets without indexes may cause slower performance because the database has to compare each row.
+
+35. What is the difference between horizontal and vertical partitioning?
+    Partitioning is a database technique used to divide data into smaller, more manageable pieces.
+
+      Horizontal Partitioning:
+        Divides the rows of a table into multiple partitions based on values in a specific column.
+        Example: Splitting a customer table into separate partitions by geographic region or by year.
+        Use Case: When dealing with large datasets, horizontal partitioning can improve performance by limiting the number of rows scanned for a query.
+
+      Vertical Partitioning:
+        Divides the columns of a table into multiple partitions.
+        Example: Storing infrequently accessed columns (e.g., large text or binary fields) in a separate table or partition.
+        Use Case: Helps in optimizing storage and query performance by separating commonly used columns from less frequently accessed data.
+
+  Key Difference:
+    Horizontal partitioning is row-based, focusing on distributing the dataset’s rows across partitions.
+    Vertical partitioning is column-based, aiming to separate less-used columns into different partitions or tables.
+
+36. What is the difference between database sharding and partitioning?
+    Sharding: Sharding involves splitting a database into multiple smaller, independent databases (shards). Each shard operates on a subset of the overall data and can be hosted on separate servers. Sharding is a horizontal scaling strategy that distributes data across multiple databases, typically to handle massive data volumes and high traffic.
+      Purpose: Horizontal scaling to handle large volumes of data and high query loads.
+      Example: A global user database might be divided into shards by region, such as a shard for North America, Europe, and Asia.
+      Key Benefit: Each shard can be queried independently, reducing the load on any single server.
+
+  Partitioning: Partitioning splits a single table into smaller, logical pieces, usually within the same database. Partitioning is a logical organization of data within a single database to optimize performance and manageability.
+    Purpose: Improve query performance by reducing the amount of data scanned, and simplify maintenance tasks such as archiving or purging old data.
+    Example: A sales table could be partitioned by year so that queries targeting recent sales do not need to scan historical data.
+
+37. What are the best practices for writing optimized SQL queries?
+    Write Simple, Clear Queries: Avoid overly complex joins and subqueries. Use straightforward, well-structured SQL that is easy to read and maintain.
+    Filter Data Early: Apply WHERE clauses as early as possible to reduce the amount of data processed. Consider using indexed columns in WHERE clauses for faster lookups.
+    Avoid SELECT *: Retrieve only the columns needed. This reduces I/O and improves performance.
+    Use Indexes Wisely: Create indexes on columns that are frequently used in WHERE clauses, JOIN conditions, and ORDER BY clauses. Regularly review index usage and remove unused indexes.
+    Leverage Query Execution Plans: Use execution plans to identify bottlenecks, missing indexes, or inefficient query patterns.
+    Use Appropriate Join Types: Choose INNER JOIN, LEFT JOIN, or OUTER JOIN based on the data relationships and performance requirements.
+    Break Down Complex Queries: Instead of a single monolithic query, use temporary tables or CTEs to process data in stages.
+    Optimize Aggregations: Use GROUP BY and aggregate functions efficiently. Consider pre-aggregating data if queries frequently require the same computations.
+    Monitor Performance Regularly: Continuously analyze query performance and fine-tune as data volumes grow or usage patterns change.
+
+38. How does SQL handle recursive queries?
+    SQL handles recursive queries using Common Table Expressions (CTEs). A recursive CTE repeatedly references itself to process hierarchical or tree-structured data.
+    Key Components:
+      Anchor Member: The initial query that starts the recursion.
+      Recursive Member: A query that references the CTE to continue building the result set.
+      Termination Condition: Ensures that recursion stops after a certain depth or condition is met.
+
+39. What is the purpose of the SQL PIVOT operator?
+    The PIVOT operator transforms rows into columns, making it easier to summarize or rearrange data for reporting.
+
+40. What are the differences between transactional and analytical queries?
+    Transactional Queries:
+      Focus on individual, short-term operations such as inserts, updates, and deletes.
+      Optimize for high-throughput and low-latency.
+      Often used in OLTP (Online Transaction Processing) systems.
+
+    Analytical Queries:
+      Involve complex aggregations, multi-dimensional analysis, and data transformations.
+      Typically read-heavy, processing large amounts of historical or aggregated data.
+      Often used in OLAP (Online Analytical Processing) systems.
+
+    Key Differences:
+      Transactional queries support day-to-day operations and maintain data integrity.
+      Analytical queries support decision-making by providing insights from large datasets
+
+41. Write a query to find the n-highest salary of an employee in a table.
+      SELECT MAX(Salary) AS SecondHighestSalary
+      FROM Employee
+      WHERE Salary < (SELECT MAX(Salary) FROM Employee);
+
+      Explanation: This query identifies the second-highest salary by selecting the maximum salary that is less than the overall highest salary. The subquery determines the top salary, while the outer query finds the next highest value.
+
+42. Write a query to fetch the 3rd and 4th highest salaries.
+    SELECT Salary 
+    FROM Employee
+    ORDER BY Salary DESC
+    LIMIT 2 OFFSET 2;
+
+  Explanation: Using ORDER BY and the combination of LIMIT and OFFSET, the query skips the top two salaries and retrieves the next two highest.
+
+43. Write a query to check if a table contains any records.
+      SELECT CASE WHEN EXISTS (SELECT * FROM TableName) THEN 'Has Records' ELSE 'No Records' END AS Status;
+
+Explanation: The query uses EXISTS to determine if any rows exist in the table, returning a status of ‘Has Records’ or ‘No Records’ based on the result.
+
+44. Write a query to fetch alternating rows from a table.
+    SELECT * FROM Employee WHERE MOD(RowID, 2) = 0;
+
+Explanation: By applying a modulo operation on a unique identifier (RowID), the query returns rows with even IDs, effectively fetching every other row.
+
+45. Write a query to fetch the nth record from a table.
+    SELECT * FROM Employee LIMIT 1 OFFSET (n-1);
+
+Explanation: Using LIMIT 1 OFFSET (n-1), this query retrieves a single row corresponding to the specified position (nth) in the ordered result set.
+
+46. Count of records for different type of Joins
+  A	      B
+  1	      1
+  1	      1
+  1	      2
+  2	      2
+  3      null
+  null   null
+
+Inner Join: 8
+Left Join: 10
+Right Join: 10
+Full Join: 12
+Cross Join(Cartesian Join): 36
